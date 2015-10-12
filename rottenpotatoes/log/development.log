@@ -670,3 +670,50 @@ Started GET "/assets/application.self.js?body=1" for 132.161.196.192 at 2015-10-
 
 
 Started GET "/assets/jquery_ujs.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:23:42 +0000
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&sort=title" for 132.161.196.192 at 2015-10-12 19:43:42 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG-13"=>"1"}, "sort"=>"title"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG-13')  ORDER BY "movies"."title" ASC[0m
+  Rendered movies/index.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 132.161.196.192 at 2015-10-12 19:43:42 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:43:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:43:42 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:43:42 +0000
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&sort=release_date" for 132.161.196.192 at 2015-10-12 19:50:15 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG-13"=>"1"}, "sort"=>"release_date"}
+Redirected to https://hw-bdd-tdd-cycle-shen-zhang.c9.io/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&sort=release_date
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG-13%5D=1&sort=release_date" for 132.161.196.192 at 2015-10-12 19:50:15 +0000
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG-13"=>"1"}, "sort"=>"release_date"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG-13')  ORDER BY "movies"."release_date" ASC
+  Rendered movies/index.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 132.161.196.192 at 2015-10-12 19:50:15 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:50:15 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:50:15 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 132.161.196.192 at 2015-10-12 19:50:15 +0000

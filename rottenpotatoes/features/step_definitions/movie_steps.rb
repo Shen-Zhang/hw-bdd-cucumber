@@ -13,9 +13,12 @@ end
 #   on the same page
 
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
+  first = (/#{e1}/ =~ page.body)
+  second = (/#{e2}/ =~ page.body)
+  
+  first.should <= second
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
 end
 
 # Make it easier to express checking or unchecking several boxes at once
@@ -40,6 +43,7 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 end
 
 Then /I should see all the movies/ do
+  #We add one because it counts the header row (which is not a movie)
   expected = Movie.count + 1
   page.should have_css("table#movies tr", :count=>expected)
   
