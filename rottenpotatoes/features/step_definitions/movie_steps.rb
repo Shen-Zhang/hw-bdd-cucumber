@@ -40,6 +40,8 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 end
 
 Then /I should see all the movies/ do
+  expected = Movie.count + 1
+  page.should have_css("table#movies tr", :count=>expected)
+  
   # Make sure that all the movies in the app are visible in the table
-  fail "Unimplemented"
 end
